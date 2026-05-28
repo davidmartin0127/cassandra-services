@@ -1,0 +1,20 @@
+name: Daily Opportunity Check
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Daily at noon
+  workflow_dispatch:
+
+jobs:
+  check-opportunities:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check inbox for leads
+        run: |
+          echo "Checking for new opportunities..."
+          # This would check email for business leads
+          # For now, just a placeholder
+      
+      - name: Report to board
+        if: success()
+        run: |
+          echo "Daily check complete"
